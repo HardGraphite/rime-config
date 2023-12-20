@@ -1,0 +1,10 @@
+name: my_pinyin
+version: 0
+sort: by_weight
+use_preset_vocabulary: false
+import_tables:
+  - ./my_pinyin_dicts/clover.base
+  - ./my_pinyin_dicts/clover.phrase
+  - ./my_pinyin_dicts/sogou_pinyin_cs
+  - ./my_pinyin_dicts/sogou_pinyin_ee
+  - ./my_pinyin_dicts/sogou_pinyin_math

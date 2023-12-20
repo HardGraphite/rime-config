@@ -1,0 +1,33 @@
+patch:
+  schema_list:
+    - schema: double_pinyin # 自然码双拼
+
+  menu/page_size: 5
+
+  ascii_composer/switch_key:
+    Caps_Lock: noop
+    Control_L: noop
+    Control_R: noop
+    Shift_L: inline_ascii
+    Shift_R: commit_code
+
+  key_binder/bindings:
+    - {accept: comma, send: Shift+Left, when: composing}
+    - {accept: period, send: Shift+Right, when: composing}
+    - {accept: bracketleft, send: Page_Up, when: composing}
+    - {accept: bracketright, send: Page_Down, when: composing}
+    - {accept: Shift+space, toggle: ascii_mode, when: always}
+
+  switcher:
+    caption: "[配置]"
+    abbreviate_options: true
+    fold_options: true
+    option_list_separator: " | "
+    hotkeys:
+      - "Control+Alt+grave"
+    save_options:
+      - full_shape
+      - ascii_punct
+      - extended_charset
+      - zh_hans
+
