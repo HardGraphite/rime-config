@@ -21,6 +21,7 @@ patch:
     # Remove "simplifier".
 
   translator/dictionary: ./my_pinyin
+  translator/enable_user_dict: false
 
   recognizer/patterns: [] # Remove "reverse_lookup"
 
