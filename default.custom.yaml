@@ -1,6 +1,6 @@
 patch:
   schema_list:
-    - schema: double_pinyin # 自然码双拼
+    - schema: happy # 拼音（自然码）
 
   menu/page_size: 6
 

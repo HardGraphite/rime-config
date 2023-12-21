@@ -2,20 +2,13 @@
 
 这是个人的 RIME 输入法配置。
 
-主要使用自然码双拼（`rime-double-pinyin`）。
-对 RIME 的自然码进行了改动，
-关闭了繁简转换、笔画查找和内置的词库，
-并使用了自定义的词库。
-
 ## 文件结构
 
 - `/`：rime 配置根目录
   - `README.md`：本文件
   - `Makefile`
-  - `default.custom.yaml`：主配置
-  - `double_pinyin.custom.yaml`：自然码双拼配置
-  - `my_pinyin.dict.yaml`：自定义拼音词库
-  - `my_pinyin_dicts/`：存放拼音词库的目录，由“`my_pinyin.dict.yaml`”引用
+  - `default.custom.yaml`：默认配置自定义
+  - `happy.*`：Happy 双拼输入方案
 
 ## 部署
 
@@ -29,12 +22,17 @@
 并参考 Makefile 的内容编译输入方案和词库，
 方可使用。
 
-## 添加词库
+## Happy 方案
+
+Happy，即 HardGraphite's Double Pinyin Schema，
+是一个自定义的双拼输入方案。
+它借鉴了 RIME 的自然码方案（rime-double-pinyin）的规则，
+并使用了其它的词库。
 
 若要添加拼音词库，
 应将 RIME 可读格式的词库（YAML文件）复制到
-“`my_pinyin_dicts/`”目录下，
-并在“`my_pinyin.dict.yaml`”中导入相应词库。
+“`happy.dicts/`”目录下，
+并在“`happy.dict.yaml`”中导入相应词库。
 
 ## 参考
 

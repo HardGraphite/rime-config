@@ -12,4 +12,4 @@ build: *.yaml
 .PHONY: clean
 clean:
 	rm -r build/
-	rm -r user.yaml installation.yaml my_pinyin.userdb/ sync/
+	rm -r user.yaml installation.yaml *.userdb/ sync/
