@@ -3,13 +3,15 @@
 
 schema:
   schema_id: happy
-  name: "拼音（自然码）"
+  name: "拼音-自然码"
   version: "0.1"
   author:
     - "HardGraphite"
   description: |
     HardGraphite's Double Pinyin Schema.
     HardGraphite 的双拼方案（自然码）。
+  dependencies:
+    - happy.bushou # Used in "lua/happy_bushou_translator.lua"
 
 switches:
   switches:
@@ -39,14 +41,16 @@ engine:
     - abc_segmentor
     - punct_segmentor
     - fallback_segmentor
+    - affix_segmentor@happy_bushou
   translators:
     - punct_translator
     - script_translator
+    - lua_translator@*happy_bushou_translator
   filters:
     - uniquifier
 
 speller:
-  alphabet: zyxwvutsrqponmlkjihgfedcba
+  alphabet: "zyxwvutsrqponmlkjihgfedcba/-" # "/" and "-" are used by "lua_translator@*happy_bushou_translator"
   delimiter: " '"
   algebra:
     - erase/^xx$/
@@ -85,7 +89,7 @@ translator:
   prism: happy
   enable_user_dict: false
   preedit_format:
-    - xform/([bpmnljqxy]n/$1in/
+    - xform/([bpmnljqxy])n/$1in/
     - xform/(\w)g/$1eng/
     - xform/(\w)q/$1iu/
     - xform/([gkhvuirzcs])w/$1ua/
@@ -126,3 +130,5 @@ key_binder:
 
 recognizer:
   import_preset: default
+  patterns:
+    happy_bushou: "^[a-z]+/[a-z-]+$"

@@ -1,0 +1,16 @@
+# Rime schema
+# encoding: utf-8
+
+schema:
+  schema_id: happy.bushou
+  name: "拼音-自然码/部首"
+  version: "0.1"
+  author:
+    - "HardGraphite"
+  description: |
+    辅助 happy.schema 通过部首过滤候选词。
+
+translator:
+  dictionary: happy.bushou
+  prism: happy.bushou
+  enable_user_dict: false
